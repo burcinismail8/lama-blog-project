@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
+import Single from "./pages/Single";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
@@ -16,6 +16,7 @@ root.render(
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/post/:id" element={<Single />} />
           </Routes>
         </BrowserRouter>
       </div>
