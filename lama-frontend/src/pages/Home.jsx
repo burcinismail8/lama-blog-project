@@ -1,9 +1,10 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Home.scss";
 const Home = () => {
+  const navigate = useNavigate();
   const posts = [
     {
       id: "1",
@@ -41,7 +42,9 @@ const Home = () => {
                   <h1>{post.title}</h1>
                 </Link>
                 <p>{post.desc}</p>
-                <button>Read More</button>
+                <button onClick={() => navigate(`/post/${post.id}`)}>
+                  Read More
+                </button>
               </div>
             </div>
           ))}
